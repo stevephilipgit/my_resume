@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypter and Decrypter</title>
+    <script src="myscripts.js"></script>
+    <script>
+
+    </script>
+    <style>
+        body {
+
+            background-color: #1b1b1b;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+
+            font-family: "Lucida Console", "Courier New", monospace;
+            width: 50%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #d9d9d9;
+        }
+
+        textarea {
+
+            font-family: "Lucida Console", "Courier New", monospace;
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        #startButton,
+        #stopButton {
+
+            font-family: "Lucida Console", "Courier New", monospace;
+            padding: 10px 20px;
+            background-color: #f40505;
+            color: white;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h4 {
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
+            color: #c0c0c0;
+
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+
+        #clear {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d1bdbd;
+            color: rgb(12, 12, 12);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Encrypter and Decrypter</h2>
+        <table>
+            <tr>
+                <td>
+                    <textarea id="inputText" placeholder="Converted text will appear here..."></textarea><br>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="clear" value="clear" onclick="to_clear()"></td>
+            </tr>
+
+            <td><button id="startButton" onclick="startRecording()">Start</button>
+                <button id="stopButton" onclick="stopRecording()" disabled>Stop</button>
+
+
+                <button onclick="encryptText()">Encrypt</button>
+                <button onclick="decryptText()">Decrypt</button>
+            </td>
+
+        </table>
+    </div>
+    <div class="container-2">
+        <h4>◘ Start! To speak a message</h4>
+        <h4>◘ Stop! voice</h4>
+        <h4>◘ Encrypt the plaintext that is entered button</h4>
+        <h4>◘ Decrypt the encryptedText button</h4>
+    </div>
+</body>
+
+</html>

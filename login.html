@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<form id="loginForm" onsubmit="return validateForm()">
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input type="submit" value="Login">
+</form>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // You can replace these with your actual username and password
+        var validUsername = "user";
+        var validPassword = "password";
+
+        if (username === validUsername && password === validPassword) {
+            // Set session storage item
+            sessionStorage.setItem("loggedIn", "true");
+
+            // Redirect to the main page
+            window.location.href = "index.html";
+            return false; // Prevent form submission
+        } else {
+            alert("Invalid username or password. Please try again.");
+            return false; // Prevent form submission
+        }
+    }
+
+    // Check session expiration
+    var sessionExpired = setTimeout(function() {
+        sessionStorage.removeItem("loggedIn");
+        window.location.href = "login.html";
+    }, 1 * 60 * 1000); // 3 minutes
+</script>
+
+</body>
+</html>
